@@ -1,0 +1,34 @@
+#botoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4%;
+}
+
+#botoes li {
+    background-color: #234C6A;
+    padding: 15px;
+    border-radius: 45px;
+    margin-bottom: 4%;
+    box-shadow: 0px 5px 10px #000;
+    text-size-adjust: auto;
+}
+
+#botoes a {
+    font-size: 60px;
+    background-color: #D2C1B6;
+    border-radius: 33px;
+    padding: 5px;
+    color: black;
+    display: flex;
+    flex: 1;
+    text-shadow: 0px 5px 10px #D2C1B6;
+    box-shadow: inset 1px 1px 10px #000;
+
+}
+
+#botoes a:hover {
+    transition: 0.5s;
+    color: #D2C1B6;
+    background-color: #456882;
+}

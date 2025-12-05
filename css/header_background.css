@@ -1,0 +1,31 @@
+
+header{
+    background-color: #1B3C53;
+    box-shadow: 0px 4px 25px #000;
+}
+header img{
+    width: 100px;
+    height: 50%;
+}
+#menu {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+body{
+    background-color: #D2C1B6;
+}
+
+header img{
+ background-color: #D2C1B6;
+ border-radius: 33px;
+ border: #000 solid;
+ margin-bottom: 0.5%;
+ margin-top: 0.5%;
+}
+
+header li {
+    display: flex;
+    
+}
