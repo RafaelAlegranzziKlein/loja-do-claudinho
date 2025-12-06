@@ -6,6 +6,7 @@ header{
 header img{
     width: 100px;
     height: 50%;
+    margin-left: 5%;  
 }
 #menu {
 display: flex;
@@ -25,7 +26,44 @@ header img{
  margin-top: 0.5%;
 }
 
-header li {
+header ul {
     display: flex;
+    justify-content: center;
+    margin-right: 10px;
+    gap : 15%;
+    align-items: center;
+    margin-right: 5%;
+    
     
 }
+header ul li a{
+    text-decoration: none;
+    color: #456882;
+    font-size: 20px;
+    background-color: #D2C1B6;
+    padding: 15px;	
+    border-radius: 25px;
+    text-shadow: 0px 5px 10px #D2C1B6;
+    box-shadow: inset 3px 3px 20px #000;
+    
+
+}
+
+
+header ul li h2{
+    color: #234C6A;
+    font-size: 25px;
+    background-color: #D2C1B6;
+    padding: 15px;	
+    border-radius: 25px;
+    box-shadow: 3px 3px 20px #000;
+
+
+}
+header ul li a:hover{
+    color: #1B3C53;
+    transition: 0.5s;
+    box-shadow: 3px 3px 20px #000;
+    background: color-mix(in srgb, #456882 30%, #D2C1B6 70%);
+}
+
