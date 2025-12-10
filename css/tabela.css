@@ -1,1 +1,8 @@
 
+.tabela_boletos{
+    margin-top: 5%;
+    display: flex;
+    margin-right: 5%;
+    margin-left: 5%;
+    flex-direction: column;
+}
