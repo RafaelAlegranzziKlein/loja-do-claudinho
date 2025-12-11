@@ -1,8 +1,23 @@
-
-.tabela_boletos{
+.tabela_boletos {
     margin-top: 5%;
     display: flex;
     margin-right: 5%;
     margin-left: 5%;
+    flex-direction: column;
+}
+
+.tabela_boletos button {display: flex;}
+
+.tabela_boletos form {
+    background-color: aqua;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#teste2{
+    display: flex;
     flex-direction: column;
 }
