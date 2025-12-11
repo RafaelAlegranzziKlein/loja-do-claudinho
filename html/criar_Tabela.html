@@ -2,73 +2,75 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/header_background.css">
-    <link rel="stylesheet" href="../css/tabela.css">
-    <title> </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/header_background.css" />
+    <link rel="stylesheet" href="../css/tabela.css" />
+
+    <title>Tabelas</title>
 </head>
 
 <body>
-    <header>
 
-        <ul>
-            <a href="../index.html"><img src="../img/home_553376.png" alt="HOME"></a>
-            <li>
-                <h2> CRIAR_NOVA_TABELA </h2>
-            </li>
-            <li><a href="../html/contas_Pagar.html"> CONTAS_PARA_PAGAR </a></li>
-            <li><a href="../html/clientes.html"> CLIENTES_DEVEDORES </a></li>
-        </ul>
+    <header>
+        <nav id="menu">
+            <a href="../index.html">
+                <img src="../img/home_553376.png" alt="HOME" />
+            </a>
+            <ul>
+                <li><a href="../html/criar_Tabela.html">CRIAR_NOVA_TABELA</a>
+                </li>
+                <li><a href="../html/contas_Pagar.html">CONTAS_PARA_PAGAR</a></li>
+                <li><a href="../html/clientes.html">CLIENTES_DEVEDORES</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="form-container">
-        <form>
-            <h1 id="titulo">FORNECEDOR</h1>
-            <label>Data Vencimento</label>
-            <input class="cor" type="date" id="data">
+    <div class="tabelas-lado-a-lado">
+        <div class="form-container">
+            <form>
+                <h1 id="titulo">FORNECEDOR</h1>
 
+                <label>Data Vencimento</label>
+                <input class="cor" type="date" />
 
-            <label>Valor</label>
-            <input class="cor" type="text">
+                <label>Valor</label>
+                <input class="cor" type="number" />
 
-            <label>Juros</label>
-            <input class="cor" type="text">
+                <label>Juros</label>
+                <input class="cor" type="number" />
 
-            <label> <br>Nome Fornecedor</label>
-            <input class="cor" type="text">
-            <div>
+                <label>Nome Fornecedor</label>
+                <input class="cor" type="text" />
+
                 <button type="submit">CRIAR</button>
                 <button type="reset">LIMPAR</button>
-            </div>
-    </div>
-    </form>
-    </div>
+            </form>
+        </div>
 
+        <div class="form-container">
+            <form>
+                <h1 id="titulo2">CLIENTES</h1>
 
-      <div class="form-container">
-        <form>
-            <h1 id="titulo2" >CLIENTES</h1>
-            <label>Nome</label>
-            <input class="cor" type="date" id="data">
+                <label>Nome</label>
+                <input class="cor" type="text" />
 
+                <label>Cpf</label>
+                <input class="cor" type="text" />
 
-            <label>Cpf</label>
-            <input class="cor" type="text">
+                <label>Dívida</label>
+                <input class="cor" type="text" />
 
-            <label>Divida</label>
-            <input class="cor" type="text">
+                <label>Fidelidade - Taxa de Juros</label>
+                <input class="cor" type="number" />
 
-            <label> <br>Fidelilade</label>
-            <input class="cor" type="text">
-            <div>
                 <button type="submit">ENVIAR</button>
                 <button type="reset">LIMPAR</button>
-            </div>
+            </form>
+        </div>
     </div>
-    </form>
-    </div>
+
     <script src="../js/tabela.js"></script>
 </body>
 

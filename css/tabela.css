@@ -1,17 +1,29 @@
+/* Foi Utilizado IA para deixar o site responsivo. */
 body {
-    background:  #D2C1B6;
+    background: #D2C1B6;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .form-container {
     background: #3f5f78;
-    width: 420px;
-    height: 420px;
+    width: 90%;              
+    max-width: 420px;
     padding: 30px;
     border-radius: 15px;
-    margin: 40px auto;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
 }
+
+
+#titulo, 
+#titulo2 {
+    font-style: oblique;
+    color: white;
+    text-align: center;        
+    margin-bottom: 20px;
+}
+
 
 form label {
     display: block;
@@ -27,53 +39,69 @@ form input {
     border-radius: 20px;
     border: none;
     outline: none;
+    background-color:#D2C1B6;
 }
 
-.linha {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.linha input {
-    flex: 1;
-     background-color:#D2C1B6;
-}
 
 button {
     margin-top: 20px;
-    width: 425px;
-    padding: 10px;
-    border-radius: 100px;
+    width: 100%;            
+    padding: 12px;
+    border-radius: 50px;
     border: none;
     font-size: 18px;
     cursor: pointer;
     background-color: #ffd900;
-}
-#data {
-  margin-top: 20px;
-}
-button:hover{
-    transform: scale(1.05);
-    transition: 0.5s;
-    background-color: rgb(255, 255, 255);
-}
-.fid {
-    width:90px;
-    height: 40px;
-    display: flex;
+    transition: 0.3s;
 }
 
-.cor{
-    background-color: #D2C1B6;
+button:hover {
+    transform: scale(1.05);
+    background-color: white;
 }
-#titulo {
-  font-style: oblique;
-color: white;
-margin-left: 150px;
+
+
+
+.tabelas-lado-a-lado {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px auto;
+    flex-wrap: wrap;          
 }
-#titulo2 {
-  font-style: oblique;
-color: white;
-margin-left: 160px;
+
+
+
+@media (max-width: 768px) {
+
+    .tabelas-lado-a-lado {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-container {
+        max-width: 350px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .form-container {
+        padding: 20px;
+    }
+
+    #titulo, #titulo2 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 10px;
+    }
 }
