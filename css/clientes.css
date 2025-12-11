@@ -61,5 +61,7 @@ button:hover{
     width:90px;
     height: 40px;
     display: flex;
- 
+}
+.cor{
+    background-color: #D2C1B6;
 }
