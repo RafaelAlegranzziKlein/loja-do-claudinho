@@ -6,7 +6,7 @@ padding: 25px;
 border-radius: 15px;
 margin: 40px auto;
 box-shadow: #090909 5px 5px 10px;
-
+text-align: end;
 }
 
 form label{
@@ -14,18 +14,26 @@ color: white;
 font-weight: bold;
 margin-top: 10px;
 display: flex;
-align-items: center;
+
 }
 
 form input{
 width: 100px;
 padding: 8px;
-
-
-
+}
+.pagar{
+  display:block ;
+  margin: -130px auto;
+    width: 350px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #20f355;
 
 }
-label{
-display: flex;
-align-items: center;
+button:hover{
+    transform: scale(1.05);
+    transition: 0.5s;
 }
