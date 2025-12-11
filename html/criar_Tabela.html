@@ -22,58 +22,29 @@
             <li><a href="../html/clientes.html"> CLIENTES_DEVEDORES </a></li>
         </ul>
     </header>
-<div id="teste2">
-    <div class="tabela_boletos">
-        <h2>BOLETOS</h2>
-        <br>
-       <form>
-            <label>DATA_DE_VENCIMENTO</label>
-            <input type="date" id="data_de_vencimento">
-            <br>
-            <label>VALOR</label>
-            <input type="number" id="valorID">
-            <br>
-            <label>JUROS</label>
-            <input type="number" id="jurosID">
-            <br>
-            <label>Nome do fornecedor</label>
-            <input type="text" name="Nome_do_fornecedor" id="fornecedorID">
-            <br>
-            <button type="submit">CRIAR</button>
-            
-            <button type="reset">LIMPAR</button>
-       </form>
+
+    <div class="form-container">
+        <form>
+            <label>Data Vencimento</label>
+            <input type="date" id="data">
+
+
+            <label>Valor</label>
+            <input class="cor" type="text">
+
+            <label>Juros</label>
+            <input class="cor" type="text">
+
+            <label> <br>Nome Fornecedor</label>
+            <input class="cor" type="text">
+            <div>
+                <button class="cor" type="submit">CRIAR</button>
+                <button class="cor" type="reset">LIMPAR</button>
+            </div>
     </div>
-
-    <div class="tabela_clientes">
-        <h2>CLIENTES</h2>
-       
-            <label>NOME</label>
-            <input type="text" id="Nome">
-            <br>
-            <label>CPF</label>
-            <input type="number" id="CPF">
-            <br>
-            <label>DIVIDA</label>
-            <input type="number" id="dividas">
-            <br>
-            <label>FIDELIDADE</label>
-            <select id="nivel_de_fidelidade">
-                <option value="1">CLIENTE PLATINA</option>
-                <option value="2">CLIENTE GOLD</option>
-                <option value="3">CLIENTE PRATA</option>
-                <option value="4">CLIENTE BRONZE</option>
-                <option value="5">CALOTEIRO</option>
-            </select>
-            <button type="submit">ENVIAR</button>
-            <button type="reset">LIMPAR</button>
-        
+    </form>
     </div>
-</div>
-
-
-
-<script src="../js/tabela.js"></script>
+    <script src="../js/tabela.js"></script>
 </body>
 
 </html>
