@@ -1,20 +1,37 @@
-import { sqlite3 } from 'sqlite';
-import { open } from 'sqlite';
+import { db } from './firebaseConfig.js';
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
-async function CriarTabelaClientes() {
-const db = await open({
- filename: './banco.db',
- driver: sqlite3.driver,
-});
-db.run(
-    'CREATE TABLE IF NOT EXISTS Clientes ('
-)
-
+ function getInput(){
+    return {
+        nome: document.getElementById("nome"),
+        idade: document.getElementById("idade"),
+        cargo: document.getElementById("cargo")
+    }
 }
 
+function getValores({nome, idade, cargo}){
+    return {
+        nome: nome.value.trim(),
+        idade: parseInt(idade.value),
+        cargo: cargo.value.trim()
+    }
+}
+document.getElementById("btnEnviar").addEventListener("click", async function (){
+    const Inputs = getInput()
+    const dados = getValores(Inputs)
 
+    console.log("Dados", dados)
 
-function getInpus() {
+    try{
+        const ref = await addDoc(collection(db, "funcionarios"), dados)
+        console.log("ID do documento", ref.id)
+        alert("Funcionario cadastrado com sucesso.")
+    } catch (e){
+        console.log("Erro:", e)
+    }
+})
+
+function getInput() {
     return{
         Nome: document.getElementById("Nome"),
         CPF: document.getElementById("CPF"),
