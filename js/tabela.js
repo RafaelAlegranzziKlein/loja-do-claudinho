@@ -1,3 +1,19 @@
+import { sqlite3 } from 'sqlite';
+import { open } from 'sqlite';
+
+async function CriarTabelaClientes() {
+const db = await open({
+ filename: './banco.db',
+ driver: sqlite3.driver,
+});
+db.run(
+    'CREATE TABLE IF NOT EXISTS Clientes ('
+)
+
+}
+
+
+
 function getInpus() {
     return{
         Nome: document.getElementById("Nome"),

@@ -6,7 +6,7 @@ create table Clientes (
 Nome varchar(50) not null,
 CPF varchar (15) primary key unique,
 dividas decimal(10,2) not null,
-nivel_de_fidelidade enum('1','2','3','4','5') not null
+nivel_de_fidelidade numeric(4) not null
 );
 
 create table Boleto_de_Fornecedor (
