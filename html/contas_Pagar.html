@@ -2,62 +2,48 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/header_background.css">
-    <link rel="stylesheet" href="../css/contas_Pagar.css">
-    <title> </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/header_background.css" />
+    <link rel="stylesheet" href="../css/contas_Pagar.css" />
+    <title>Contas a Pagar</title>
 </head>
 
 <body>
     <header>
-       
-        <ul><a href="../index.html"><img src="../img/home_553376.png" alt="HOME"></a>
-            
-            <li><a href="../html/criar_Tabela.html"> CRIAR_NOVA_TABELA </a></li>
-            <li><h2> CONTAS_PARA_PAGAR </h2></li>
-            <li><a href="../html/clientes.html"> CLIENTES_DEVEDORES </a></li>
-        </ul>
+        <nav>
+            <a href="../index.html">
+                <img src="../img/home_553376.png" alt="HOME" />
+            </a>
+            <ul>
+                <li><a href="../html/criar_Tabela.html">CRIAR_NOVA_TABELA</a></li>
+                <li><h2>CONTAS_PARA_PAGAR</h2></li>
+                <li><a href="../html/clientes.html">CLIENTES_DEVEDORES</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="boleto_de_Fornecedor">
-    <form id="Nome_fornecedor">
-    <label for="Data_vencimento">Data de vencimento</label>
-    <input type="date" name="" id="">
-    <br>
-    <label for="valor">valor</label>
-    <input type="text" name="" id="">
-    <br>
-    <label for="juros">juros</label>
-    <input type="text" name="" id="">
-    <br>
-    <label for="fornecedor">fornecedor</label>
-    <input type="text" name="" id="">
-    <br>
-      </div>
-    <div>
-    <button type="button" id="pagar" class="pagar">PAGAR</button>
-    </div>
-    
+    <main>
+        <div class="boleto_de_Fornecedor">
+            <form id="Nome_fornecedor">
+                <label for="Data_vencimento">Data de vencimento</label>
+                <input type="date" id="Data_vencimento" name="Data_vencimento" />
 
-    </form>
+                <label for="valor">Valor</label>
+                <input type="text" id="valor" name="valor" />
 
+                <label for="juros">Juros</label>
+                <input type="text" id="juros" name="juros" />
 
+                <label for="fornecedor">Fornecedor</label>
+                <input type="text" id="fornecedor" name="fornecedor" />
 
-  
+                 <button type="submit">ENVIAR</button>
+            </form>
+        </div>
+    </main>
 
-
-
-
-
-
-
-
-
-
-
-    
 </body>
 
 </html>
