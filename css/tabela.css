@@ -1,23 +1,107 @@
-.tabela_boletos {
-    margin-top: 5%;
-    display: flex;
-    margin-right: 5%;
-    margin-left: 5%;
-    flex-direction: column;
+/* Foi Utilizado IA para deixar o site responsivo. */
+body {
+    background: #D2C1B6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.tabela_boletos button {display: flex;}
+.form-container {
+    background: #3f5f78;
+    width: 90%;              
+    max-width: 420px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
 
-.tabela_boletos form {
-    background-color: aqua;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    text-align: center;
-    align-items: center;
+
+#titulo, 
+#titulo2 {
+    font-style: oblique;
+    color: white;
+    text-align: center;        
+    margin-bottom: 20px;
+}
+
+
+form label {
+    display: block;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color:#D2C1B6;
+}
+
+
+button {
+    margin-top: 20px;
+    width: 100%;            
+    padding: 12px;
+    border-radius: 50px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #ffd900;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: white;
+}
+
+
+
+.tabelas-lado-a-lado {
+    display: flex;
     justify-content: center;
+    gap: 40px;
+    margin: 40px auto;
+    flex-wrap: wrap;          
 }
 
-#teste2{
-    display: flex;
-    flex-direction: column;
+
+
+@media (max-width: 768px) {
+
+    .tabelas-lado-a-lado {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-container {
+        max-width: 350px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .form-container {
+        padding: 20px;
+    }
+
+    #titulo, #titulo2 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 10px;
+    }
 }

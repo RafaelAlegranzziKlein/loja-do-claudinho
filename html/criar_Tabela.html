@@ -2,78 +2,76 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/header_background.css">
-    <link rel="stylesheet" href="../css/tabela.css">
-    <title> </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/header_background.css" />
+    <link rel="stylesheet" href="../css/tabela.css" />
+
+    <title>Tabelas</title>
 </head>
 
 <body>
+
     <header>
-
-        <ul>
-            <img src="../img/home_553376.png" alt="HOME">
-            <li>
-                <h2> CRIAR_NOVA_TABELA </h2>
-            </li>
-            <li><a href="../html/contas_Pagar.html"> CONTAS_PARA_PAGAR </a></li>
-            <li><a href="../html/clientes.html"> CLIENTES_DEVEDORES </a></li>
-        </ul>
+        <nav id="menu">
+            <a href="../index.html">
+                <img src="../img/home_553376.png" alt="HOME" />
+            </a>
+            <ul>
+                <li><a href="../html/criar_Tabela.html">CRIAR_NOVA_TABELA</a>
+                </li>
+                <li><a href="../html/contas_Pagar.html">CONTAS_PARA_PAGAR</a></li>
+                <li><a href="../html/clientes.html">CLIENTES_DEVEDORES</a></li>
+            </ul>
+        </nav>
     </header>
-<div id="teste2">
-    <div class="tabela_boletos">
-        <h2>BOLETOS</h2>
-        <br>
-       <form>
-            <label>DATA_DE_VENCIMENTO</label>
-            <input type="date" id="data_de_vencimento">
-            <br>
-            <label>VALOR</label>
-            <input type="number" id="valorID">
-            <br>
-            <label>JUROS</label>
-            <input type="number" id="jurosID">
-            <br>
-            <label>Nome do fornecedor</label>
-            <input type="text" name="Nome_do_fornecedor" id="fornecedorID">
-            <br>
-            <button type="submit">CRIAR</button>
-            
-            <button type="reset">LIMPAR</button>
-       </form>
+
+    <div class="tabelas-lado-a-lado">
+        <div class="form-container">
+            <form>
+                <h1 id="titulo">FORNECEDOR</h1>
+
+                <label>Data Vencimento</label>
+                <input class="cor" type="date" />
+
+                <label>Valor</label>
+                <input class="cor" type="number" />
+
+                <label>Juros</label>
+                <input class="cor" type="number" />
+
+                <label>Nome Fornecedor</label>
+                <input class="cor" type="text" />
+
+                <button type="submit">CRIAR</button>
+                <button type="reset">LIMPAR</button>
+            </form>
+        </div>
+
+        <div class="form-container">
+            <form>
+                <h1 id="titulo2">CLIENTES</h1>
+
+                <label>Nome</label>
+                <input class="cor" type="text" />
+
+                <label>Cpf</label>
+                <input class="cor" type="text" />
+
+                <label>Dívida</label>
+                <input class="cor" type="text" />
+
+                <label>Fidelidade - Taxa de Juros</label>
+                <input class="cor" type="number" />
+
+                <button type="submit">ENVIAR</button>
+                <button type="reset">LIMPAR</button>
+            </form>
+        </div>
     </div>
 
-    <div class="tabela_clientes">
-        <h2>CLIENTES</h2>
-       
-            <label>NOME</label>
-            <input type="text" id="Nome">
-            <br>
-            <label>CPF</label>
-            <input type="number" id="CPF">
-            <br>
-            <label>DIVIDA</label>
-            <input type="number" id="dividas">
-            <br>
-            <label>FIDELIDADE</label>
-            <select id="nivel_de_fidelidade">
-                <option value="1">CLIENTE PLATINA</option>
-                <option value="2">CLIENTE GOLD</option>
-                <option value="3">CLIENTE PRATA</option>
-                <option value="4">CLIENTE BRONZE</option>
-                <option value="5">CALOTEIRO</option>
-            </select>
-            <button type="submit">ENVIAR</button>
-            <button type="reset">LIMPAR</button>
-        
-    </div>
-</div>
-
-
-
-<script src="../js/tabela.js"></script>
+    <script src="../js/tabela.js"></script>
 </body>
 
 </html>
