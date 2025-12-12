@@ -19,10 +19,9 @@
                 <img src="../img/home_553376.png" alt="HOME" />
             </a>
             <ul>
-                <li><a href="../html/criar_Tabela.html">CRIAR_NOVA_TABELA</a>
-                </li>
-                <li><a href="../html/contas_Pagar.html">CONTAS_PARA_PAGAR</a></li>
-                <li><a href="../html/clientes.html">CLIENTES_DEVEDORES</a></li>
+                <li><h2>ADICIONAR TABELAS</h2></li>
+                <li><a href="../html/contas_Pagar.html">CONTAS A PAGAR</a></li>
+                <li><a href="../html/clientes.html">CONTAS CLIENTES</a></li>
             </ul>
         </nav>
     </header>
@@ -43,8 +42,10 @@
 
                 <label>Nome Fornecedor</label>
                 <input class="cor" type="text" />
+                <br><br><br>
 
-                <button type="submit">CRIAR</button>
+                <button type="submit" id="btnEnviarBoleto">CRIAR</button>
+                <br><br>
                 <button type="reset">LIMPAR</button>
             </form>
         </div>
@@ -62,10 +63,13 @@
                 <label>Dívida</label>
                 <input class="cor" type="text" />
 
-                <label>Fidelidade - Taxa de Juros</label>
+                <label>Taxa de Juros ao Dia</label>
                 <input class="cor" type="number" />
 
-                <button type="submit">ENVIAR</button>
+                <label>Data de Vencimento</label>
+                <input class="cor" type="date" id="">
+
+                <button type="submit" id="btnEnviarCliente">ENVIAR</button>
                 <button type="reset">LIMPAR</button>
             </form>
         </div>
