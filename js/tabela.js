@@ -1,31 +1,39 @@
-import { db } from './firebaseConfig.js';
+import {db} from '../js/firebaseConfig.js';
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+/**
+ * 
+ * @author : Pedro
+ */
 
- function getInput(){
+ function getInputBoleto(){
     return {
-        nome: document.getElementById("nome"),
-        idade: document.getElementById("idade"),
-        cargo: document.getElementById("cargo")
+        dataVencimento: document.getElementById("dataVencimento"),
+        valor: document.getElementById("valor"),
+        juros: document.getElementById("juros"),
+        nomeFornecedor: document.getElementById("nomeFornecedor")
+        
     }
 }
 
-function getValores({nome, idade, cargo}){
+function getValoresBoleto({dataVencimento, valor, juros,nomeFornecedor }){
     return {
-        nome: nome.value.trim(),
-        idade: parseInt(idade.value),
-        cargo: cargo.value.trim()
+        dataVencimento: dataVencimento.value.trim(),
+        valor: Math.round(parseFloat(valor.value)*10)/100,
+        juros: juros.value.trim(),
+        nomeFornecedor: nomeFornecedor.value.trim()
     }
 }
-document.getElementById("btnEnviar").addEventListener("click", async function (){
-    const Inputs = getInput()
-    const dados = getValores(Inputs)
+
+document.getElementById("btnEnviarBoleto").addEventListener("click", async function (){
+    const Inputs = getInputBoleto()
+    const dados = getValoresBoleto(Inputs)
 
     console.log("Dados", dados)
 
     try{
-        const ref = await addDoc(collection(db, "funcionarios"), dados)
+        const ref = await addDoc(collection(db, "boleto"), dados)
         console.log("ID do documento", ref.id)
-        alert("Funcionario cadastrado com sucesso.")
+        alert("boleto cadastrado com sucesso.")
     } catch (e){
         console.log("Erro:", e)
     }
