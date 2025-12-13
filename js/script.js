@@ -1,7 +1,7 @@
 
 let valorConta = 200 ;
 let taxaJuros = 0.5;
-let diasAtraso = 30;
+let diasAtraso = diaDaDivida - diaAtual;
 const taxaJurosTotal = taxaJuros*diasAtraso;
 
 const valorTotal = valorConta + (valorConta * (taxaJurosTotal/100));

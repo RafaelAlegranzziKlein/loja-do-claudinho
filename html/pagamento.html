@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/reset.css">
-    <title>  </title>
+  <meta charset="UTF-8" />
+  <title>Pagamento</title>
+  <link rel="stylesheet" href="../css/pagamento.css">
 </head>
 <body>
-      <header>
-    </header>
-   
+
+<div class="pagamento-box">
+  <h2>Pagamento</h2>
+
+  <p>Descrição: <span id="pgNome"></span></p>
+  <p>Dívida original: R$ <span id="pgValor"></span></p>
+  <p>Juros: R$ <span id="pgJuros"></span></p>
+  <p class="total">Total: R$ <span id="pgTotal"></span></p>
+
+  <label>Quanto deseja pagar?</label>
+  <input type="number" id="pgInput">
+
+  <button id="pgConfirmar">Confirmar Pagamento</button>
+</div>
+
+<script type="module" src="../js/pagamento.js"></script>
 </body>
 </html>

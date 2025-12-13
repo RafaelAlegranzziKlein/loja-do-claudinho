@@ -1,5 +1,5 @@
-import {db} from '../js/firebaseConfig.js';
-import { collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+import {db} from './firebaseConfig.js';
+import { collection, addDoc , serverTimestamp} from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 /**
  * 
  * @author : Pedro
@@ -52,26 +52,29 @@ function getImputCliente() {
         cpf: document.getElementById("cpf"),
         dividaDoCliente: document.getElementById("dividaCliente"),
         taxaDeJurosDia: document.getElementById("taxaJurosCliente"),
-        vencimentoDivida: document.getElementById("dataVencimetoCliente")
+        vencimentoDivida: document.getElementById("dataVencimetoCliente") 
     }
 }
 
 function getValoresCliente({ cliente, cpf, dividaDoCliente, taxaDeJurosDia, vencimentoDivida }) {
     return {
         valueCliente: cliente.value.trim(),
-        valueCPF: parseFloat(cpf.value.trim()),
-        valueDividaCliente: Math.round(parseFloat(dividaDoCliente.value) * 10) / 100,
-        valueTxaJuros: taxaDeJurosDia / 100,
-        valueVencimentoDivida: vencimentoDivida.trim()
-
+        valueCPF: cpf.value.trim(),
+        valueDividaCliente: Number(parseFloat(dividaDoCliente.value).toFixed(2)),
+        valueTxaJuros:  Number(taxaDeJurosDia.value) / 100,
+        valueVencimentoDivida: vencimentoDivida.value
     }
 }
 
 
 document.getElementById("btnEnviarCliente").addEventListener("click", async function () {
     const Inputs = getImputCliente()
-    const dados = getValoresCliente(Inputs)
+    const valores = getValoresCliente(Inputs)
 
+    const dados = {
+        ...valores,
+        criadoEm: serverTimestamp() 
+    }
     console.log("Dados", dados)
 
     try {
