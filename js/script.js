@@ -1,107 +1,52 @@
-
-let valorConta = 200 ;
-let taxaJuros = 0.5;
-let diasAtraso = diaDaDivida - diaAtual;
-const taxaJurosTotal = taxaJuros*diasAtraso;
-
-const valorTotal = valorConta + (valorConta * (taxaJurosTotal/100));
-console.log(valorConta + " , " + taxaJurosTotal + " , " + valorTotal)
-
-
-const valorPago = 20;
-const novoValor = valorTotal - valorPago;
-
-console.log(novoValor +" " +valorTotal +" "+ valorPago)
-
-
-document.getElementById('pagar').addEventListener('click', async () => {
-    const edicao = getValoresEditar()
-    const id = edicao.editarId.value;
-    const novosDados = {
-        nome: edicao.editarNome.value.trim(),
-        email: edicao.editarEmail.value.trim(),
-        senha: edicao.editarSenha.value.trim(),
-        telefone: edicao.editarTelefone.value.trim(),
-        cnpj: edicao.editarCnpj.value.trim()
-    }
-    try {
-        const ref = doc(db, "produtores", id);
-        await setDoc(ref, novosDados);
-        alert("Produtor atualizado com sucesso!");
-        edicao.formularioEdicao.style.display = 'none';
-        carregarListaProdutores();
-    } catch (error) {
-        console.log("Erro ao salvar edição:", error);
-        alert("Erro ao atualizar produtor.");
-    }
-});
-document.getElementById('btn-cancelar-edicao').addEventListener('click', () => {
-    document.getElementById("formulario-edicao").style.display = 'none';
-});
-
-function adicionarListenersDeAcao() {
-    listarProdutoresDiv.addEventListener('click', lidarClique);
+import { db } from "./firebaseConfig.js";
+import { collection, getDocs, getDoc, doc, setDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+async function buscarBoletos() {
+    const snapshot = await getDocs(collection(db, "boletos"));
+    return snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
 }
 
-document.addEventListener("DOMContentLoaded", carregarListaProdutores);
+const listarBoletosDiv = document.getElementById("listagem-boletos");
 
+async function carregarlistaBoletos() {
+    listarBoletosDiv.innerHTML = "<p>Carregando boletos...</p>";
+    const boletos = await buscarBoletos();
+    renderizarListaBoletos(boletos);
+}
 
+function renderizarListaBoletos(boletos) {
+    listarBoletosDiv.innerHTML = "";
 
-
-
-// função clicque
-
-async function lidarClique(eventoDeClique) {
-    const btnExcluir = eventoDeClique.target.closest('.btn-Excluir');
-    if (btnExcluir) {
-        const certeza = confirm("Tem certeza que deseja fazer essa exclusão?")
-        if (certeza) {
-            const idprodutor = btnExcluir.dataset.id;
-            const exclusaoBemSucedida = await excluirProdutor(idprodutor);
-
-            if (exclusaoBemSucedida) {
-                carregarListaProdutores();
-                alert('Produtor excluído com sucesso!');
-            }
-        } else {
-            alert("Exclusão cancelada");
-        }
+    if (!boletos.length) {
+        listarBoletosDiv.innerHTML = "<p>Nenhum boleto cadastrado</p>";
+        return;
     }
 
-    // botão editar
-    const btnEditar = eventoDeClique.target.closest('.btn-Editar');
+    for (let boleto of boletos) {
+        const div = document.createElement("div");
+        div.className = "form-container";
 
-    if (btnEditar) {
-        const idprodutor = btnEditar.dataset.id;
-        const produtor = await BuscarProdutoresPorID(idprodutor)
+        div.innerHTML = `
+            <strong>Nome do fornecedor:</strong> ${boleto.nomeFornecedor}<br>
+            <strong>Valor da dívida:</strong> R$ ${Number(boleto.valor)}<br>
+            <strong>Juros ao dia:</strong> ${boleto.juros}%<br>
+            <strong>Data vencimento:</strong> ${formatarDataBR(boleto.dataVencimento)}<br>
+            <button class="btn-pagar" data-id="${boleto.id}">Pagar</button>
+        `;
 
-        const edicao = getValoresEditar()
-
-        edicao.editarNome.value = produtor.nome;
-        edicao.editarEmail.value = produtor.email;
-        edicao.editarSenha.value = produtor.senha;
-        edicao.editarTelefone.value = produtor.telefone;
-        edicao.editarCnpj.value = produtor.cnpj;
-        edicao.editarId.value = produtor.id;
-
-        edicao.formularioEdicao.style.display = 'block';
+        listarBoletosDiv.appendChild(div);
     }
 }
 
-async function BuscarProdutoresPorID(id) {
-    try {
-        const produtorDoc = doc(db, "produtores", id);
-        const snapshot = await getDoc(produtorDoc);
-        if (snapshot.exists()) {
-            return { id: snapshot.id, ...snapshot.data() };
-        } else {
-            console.log("Produtor não encontrado com o ID:", id);
-            return null;
-        }
-    } catch (error) {
-        console.log("Erro ao buscar Produtor por ID:", error);
-        alert("Erro ao buscar produtor para edição.");
-        return null;
-    }
+/* =============================
+   FORMATAR DATA PT-BR
+============================= */
+function formatarDataBR(dataISO) {
+    if (!dataISO) return "";
+    const data = new Date(dataISO);
+    const dia = String(data.getDate()).padStart(2, "0");
+    const mes = String(data.getMonth() + 1).padStart(2, "0");
+    const ano = data.getFullYear();
+    return `${dia}/${mes}/${ano}`;
 }
 
+document.addEventListener("DOMContentLoaded", carregarlistaBoletos);
