@@ -153,7 +153,7 @@ document.getElementById("confirmarPagamento").addEventListener("click", async ()
     const saldo = Number((total - valorPago).toFixed(2));
     const ref = doc(db, "Clientes", clienteAtual.id);
 
-    // ✅ CRIAR NOVO VENCIMENTO = dataPagamento + 30 dias
+    //  CRIAR NOVO VENCIMENTO = dataPagamento + 30 dias
     const novaData = new Date(dataPagamento);
     novaData.setDate(novaData.getDate() + 30);
 
@@ -167,7 +167,7 @@ document.getElementById("confirmarPagamento").addEventListener("click", async ()
             valueDividaCliente: saldo,
             valueUltimoPagamento: valorPago,
             valueDataPagamento: dataPagamento,
-            valueVencimentoDivida: novoVencimento   // ✅ SALVANDO NOVO VENCIMENTO
+            valueVencimentoDivida: novoVencimento   
         }, { merge: true });
     }
 
