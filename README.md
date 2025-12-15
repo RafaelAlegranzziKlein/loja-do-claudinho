@@ -16,6 +16,18 @@ A *Loja do Claudinho* é uma aplicação web desenvolvida com o objetivo de simu
 
 ## 👨‍💻 Participantes do projeto
 
-* *Rafael*
+* *Rafael Alegranzzi Klein*
 * *Pedro*
 * *Henrique de Lima*
+
+
+
+## 🖼 Imagens 
+
+ * ![alt text](../loja-do-claudinho/img/image.png)
+ 
+ 
+* ![alt text](../loja-do-claudinho/img/contaspagar.png)
+
+
+ * ![alt](../loja-do-claudinho/img/Index.png) 
