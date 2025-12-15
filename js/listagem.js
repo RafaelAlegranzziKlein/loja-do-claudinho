@@ -137,7 +137,7 @@ document.getElementById("dataPagamento")
 ============================= */
 document.getElementById("confirmarPagamento").addEventListener("click", async () => {
     const valorPago = Number(document.getElementById("valorPago").value);
-    const total = Number(document.getElementById("totalComJuros").innerText);
+    const total = Number(document.getElementById("valorParaZerar").innerText);
     const dataPagamento = document.getElementById("dataPagamento").value;
 
     if (!valorPago || valorPago <= 0) {
@@ -167,7 +167,7 @@ document.getElementById("confirmarPagamento").addEventListener("click", async ()
             valueDividaCliente: saldo,
             valueUltimoPagamento: valorPago,
             valueDataPagamento: dataPagamento,
-            valueVencimentoDivida: novoVencimento   
+            valueVencimentoDivida: novoVencimento
         }, { merge: true });
     }
 

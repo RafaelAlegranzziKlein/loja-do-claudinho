@@ -24,6 +24,13 @@ function getValoresBoleto({ dataVencimento, valor, juros, nomeFornecedor }) {
     }
 }
 
+function limparFornecedor({ dataVencimento, valor, juros, nomeFornecedor}) {
+  dataVencimento.value = "";
+  valor.value = "";
+  juros.value = "";
+  nomeFornecedor.value = "";
+}
+
 document.getElementById("btnEnviarBoleto").addEventListener("click", async function () {
     const Inputs = getInputBoleto()
     const dados = getValoresBoleto(Inputs)
@@ -33,6 +40,7 @@ document.getElementById("btnEnviarBoleto").addEventListener("click", async funct
     try {
         const ref = await addDoc(collection(db, "boletos"), dados)
         console.log("ID do documento", ref.id)
+        limparFornecedor(Inputs)
         alert("boleto cadastrado com sucesso.")
     } catch (e) {
         console.log("Erro:", e)
@@ -67,13 +75,23 @@ function getValoresCliente({ cliente, cpf, dividaDoCliente, taxaDeJurosDia, venc
     }
 }
 
+function limparClientes({ cliente, cpf, dividaDoCliente, taxaDeJurosDia, vencimentoDivida }) {
+  cliente.value = "";
+  cpf.value = "";
+  dividaDoCliente.value = "";
+  taxaDeJurosDia.value = "";
+  vencimentoDivida.value = "";
+}
+
+
+
 
 document.getElementById("btnEnviarCliente").addEventListener("click", async function () {
     const Inputs = getImputCliente()
     const dados = getValoresCliente(Inputs)
 
     console.log("Dados", dados)
-
+limparClientes(Inputs)
     try {
         const ref = await addDoc(collection(db, "Clientes"), dados)
         console.log("ID do documento", ref.id)
