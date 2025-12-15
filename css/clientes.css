@@ -1,68 +1,48 @@
-body {
-    background:  #D2C1B6;
-    font-family: Arial, sans-serif;
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
-.form-container {
-    background: #3f5f78;
-    width: 350px;
-    height: 350px;
-    padding: 25px;
-    border-radius: 15px;
-    margin: 40px auto;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+.hidden {
+    display: none;
 }
 
-form label {
+.modal-content {
+    background: #D2C1B6;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    color: #1B3C53;
+}
+
+.modal-content h3 {
+    margin-bottom: 15px;
+}
+
+.modal-content label {
     display: block;
-    color: white;
-    font-weight: bold;
     margin-top: 10px;
 }
 
-form input {
+.modal-content input {
     width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+}
+
+.modal-content button {
+    width: 100%;
+    margin-top: 10px;
     padding: 8px;
-    margin-top: 5px;
-    border-radius: 20px;
+    background: #234C6A;
+    color: white;
     border: none;
-    outline: none;
-}
-
-.linha {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.linha input {
-    flex: 1;
-     background-color:#D2C1B6;
-}
-
-button {
-    margin-top: 20px;
-    width: 350px;
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
-    font-size: 18px;
+    border-radius: 6px;
     cursor: pointer;
-    background-color: #20f355;
-}
-#data {
-  margin-top: 20px;
-}
-button:hover{
-    transform: scale(1.05);
-    transition: 0.5s;
-}
-.fid {
-    width:90px;
-    height: 40px;
-    display: flex;
-}
-.cor{
-    background-color: #D2C1B6;
-    
 }

@@ -52,16 +52,17 @@ function getImputCliente() {
         cpf: document.getElementById("cpf"),
         dividaDoCliente: document.getElementById("dividaCliente"),
         taxaDeJurosDia: document.getElementById("taxaJurosCliente"),
-        vencimentoDivida: document.getElementById("dataVencimetoCliente") 
+        vencimentoDivida: document.getElementById("dataVencimetoCliente")
+        
     }
 }
 
-function getValoresCliente({ cliente, cpf, dividaDoCliente, taxaDeJurosDia, vencimentoDivida }) {
+function getValoresCliente({ cliente, cpf, dividaDoCliente, taxaDeJurosDia, vencimentoDivida ,dataCadastroDividaCliente }) {
     return {
         valueCliente: cliente.value.trim(),
         valueCPF: cpf.value.trim(),
         valueDividaCliente: Number(parseFloat(dividaDoCliente.value).toFixed(2)),
-        valueTxaJuros:  Number(taxaDeJurosDia.value) / 100,
+        valueTxaJuros:  Number(taxaDeJurosDia.value),
         valueVencimentoDivida: vencimentoDivida.value
     }
 }
@@ -69,12 +70,8 @@ function getValoresCliente({ cliente, cpf, dividaDoCliente, taxaDeJurosDia, venc
 
 document.getElementById("btnEnviarCliente").addEventListener("click", async function () {
     const Inputs = getImputCliente()
-    const valores = getValoresCliente(Inputs)
+    const dados = getValoresCliente(Inputs)
 
-    const dados = {
-        ...valores,
-        criadoEm: serverTimestamp() 
-    }
     console.log("Dados", dados)
 
     try {

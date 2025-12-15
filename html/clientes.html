@@ -12,39 +12,49 @@
 
 <body>
     <header>
+
         <nav id="menu">
-                <a href="../index.html"><img src="../img/home_553376.png" alt="HOME"></a>
-                <ul>
+
+            <a href="../index.html"><img src="../img/home_553376.png" alt="HOME"></a>
+            <ul>
                 <li><a href="../html/criar_Tabela.html"> ADICIONAR TABELAS </a></li>
                 <li><a href="../html/contas_Pagar.html"> CONTAS A PAGAR </a></li>
-                <li><h2> CONTAS CLIENTES </h2></li>
+                <li>
+                    <h2> CONTAS CLIENTES </h2>
+                </li>
             </ul>
+
         </nav>
 
     </header>
-<div>
-    <div class="form-container">
-        <form>
-            <label>NOME:</label>
-            <input class="cor" type="text">
+        <div  id="listagemClientes">
+            ...
+        </div>
 
-            <label>CPF:</label>
-            <input class="cor" type="text">
+        <div id="modalPagamento" class="modal hidden">
+            <div class="modal-content">
+        
+                <h3>Pagamento da Dívida</h3>
+        
+                <p><strong>Dívida atual:</strong> R$ <span id="dividaAtual"></span></p>
+                <p><strong>Juros (%):</strong> <span id="jurosPercentual"></span>%</p>
+                <p><strong>Juros (R$):</strong> R$ <span id="jurosValor"></span></p>
+                
+                <p><strong>Total com juros:</strong> R$ <span id="totalComJuros"></span></p>
+                <p><strong>Valor para zerar:</strong> R$ <span id="valorParaZerar"></span></p>
 
-            <label>VALOR DÍVIDA:</label>
-            <input class="cor" type="text">
-
-            
-                <label>Data Inicial da Dívida</label>
-                <input class="cor" type="date" id="data">
-
-            
-        </form>
-        <button type="button">Pagar</button>
-
-    </div>
-</div>
-
+                <label>Data do pagamento</label>
+                <input type="date" id="dataPagamento">
+        
+                <label>Valor a pagar</label>
+                <input type="number" id="valorPago" step="0.01" min="0">
+        
+                <button id="confirmarPagamento">Confirmar</button>
+                <button id="cancelarPagamento">Cancelar</button>
+        
+            </div>
+        </div>
+        <script src="../js/listagem.js" type="module"></script>
 </body>
 
 </html>
